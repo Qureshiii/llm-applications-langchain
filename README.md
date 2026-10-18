@@ -14,15 +14,24 @@ An enterprise-grade development workspace focused on building context-aware prod
 The project is modularly structured to separate execution paradigms across different generative modeling frameworks:
 
 ```text
-├── 01.LLMs/                       # Core foundational Language Model configurations
-├── 02.ChatModels/                 # Contextual Conversation Interfaces
-│   ├── 01_Closed_Source_LLMs/     # Managed API Clients (OpenAI, Anthropic, Google Gemini)
-│   └── 02_Open_Source_LLMs/       # Self-hosted & Hugging Face inference hubs
-├── 03.EmbeddedModels/             # Vectorization & Semantic Analysis Infrastructure
-│   └── 04_document_similarity.py  # High-dimensional document comparison modules
-├── .gitignore                     # Git exclusion rules (Venv & Secrets filtering)
-├── requirements.txt               # Unified project standard dependencies
-└── test.py                        # Root execution gateway script
+├── 01.LLMs/                              # Foundational Language Model Configurations
+│   └── 01_LLM_Demo.py                    # Basic model execution and setup test
+├── 02.ChatModels/                        # Contextual Conversation Interfaces
+│   ├── 01_Closed_Source_LLMs/            # Managed Commercial API Clients
+│   │   ├── 01_ChatModel_openai.py        # OpenAI GPT infrastructure routing
+│   │   ├── 02_ChatModel_Anthropic.py     # Anthropic Claude orchestration
+│   │   └── 03_ChatModel_google.py        # Google Gemini managed execution
+│   └── 02_Open_Source_LLms/              # Self-hosted & Hugging Face inference hubs
+│       ├── 01_ChatModel_HF_api.py        # Hugging Face hosted inference endpoints
+│       └── 1_ChatModel_HF_local.py       # Localized model loading and parameters
+├── 03.EmbeddedModels/                    # Vectorization & Semantic Analysis Infrastructure
+│   ├── 01_Embedding_Openai_qurey.py      # OpenAI single-text query embedding generation
+│   ├── 02_embeddding_Openai_query_docs.py # OpenAI batch document embedding ingestion
+│   ├── 03_embedding_hf_local.py          # Local open-source Hugging Face embedding pipelines
+│   └── 04_document_similarity.py         # High-dimensional document comparison modules
+├── .gitignore                            # Git exclusion rules (Venv & Secrets filtering)
+├── requirements.txt                      # Unified project standard dependencies
+└── test.py                               # Root execution gateway script
 ```
 
 ---
@@ -34,7 +43,7 @@ Clone the architecture into your local runtime shell and spin up a decoupled vir
 
 ```bash
 # Clone the repository
-git clone https://github.com
+git clone https://github.com/Qureshiii/llm-applications-langchain.git
 cd llm-applications-langchain
 
 # Spin up a virtual environment
@@ -87,8 +96,8 @@ Handles stateful multi-turn interactions. Includes programmatic comparisons betw
 
 ### 🔹 Embedding Infrastructure & Document Similarity
 Converts text into high-dimensional vector representations to run vector space calculations:
-* Implements document segmentation strategies.
-* Generates vector footprints to gauge semantic matching distances across deep textual archives.
+* **Vector Embeddings:** Decoupled flows analyzing programmatic text indexing using commercial APIs vs local source packages.
+* **Similarity Matching:** Generates vector footprints to gauge semantic matching distances across deep textual archives.
 
 ---
 
